@@ -30,7 +30,7 @@ data "archive_file" "code" {
   type        = "zip"
   source_file = var.type == "go" || var.type == "custom" ? local.source : null
   source_dir  = var.type == "go" || var.type == "custom" ? null : local.source
-  output_path = "${var.name}.zip"
+  output_path = "bootstrap.zip"
 }
 
 data "aws_iam_policy_document" "lambda_assume_role_policy" {
