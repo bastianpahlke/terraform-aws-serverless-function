@@ -78,7 +78,7 @@ resource "aws_lambda_function" "lambda" {
   handler          = local.handler
   timeout          = var.timeout
   role             = aws_iam_role.lambda.arn
-  architectures    = local.architecture
+  architectures    = [local.architecture]
 
   dynamic "vpc_config" {
     for_each = range(local.inVpc)
